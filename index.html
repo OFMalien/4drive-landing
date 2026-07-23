@@ -8,7 +8,13 @@
 <meta name="description" content="Пригон авто з США під ключ у Дніпрі. Розрахуйте повну вартість за 2 хвилини в Telegram-боті: аукціон, доставка, розмитнення, комісія. Гарантія кінцевої вартості в договорі.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0A0A0B">
-<link rel="canonical" href="https://ofmalien.github.io/4drive-landing/">
+<link rel="canonical" href="https://www.4driveauto.com/">
+
+<!-- Favicon (машина з логотипа 4Drive) -->
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- OpenGraph / Social -->
 <meta property="og:type" content="website">
@@ -16,12 +22,12 @@
 <meta property="og:locale" content="uk_UA">
 <meta property="og:title" content="4Drive Auto UA - Авто з США під ключ | Дніпро">
 <meta property="og:description" content="Повна вартість авто з США за 2 хвилини в Telegram-боті. Кінцева ціна зафіксована в договорі.">
-<meta property="og:url" content="https://ofmalien.github.io/4drive-landing/">
-<meta property="og:image" content="https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg">
+<meta property="og:url" content="https://www.4driveauto.com/">
+<meta property="og:image" content="https://www.4driveauto.com/img/og_4drive.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg">
+<meta name="twitter:image" content="https://www.4driveauto.com/img/og_4drive.jpg">
 
 <!-- Preload Hero Image & Fonts for LCP -->
 <link rel="preload" as="image" href="img/hero_new.jpg">
@@ -316,7 +322,48 @@
   }
   .calc-aside h3 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
   .calc-aside p { font-size: 16px; color: var(--muted); margin-bottom: 24px; }
-  @media (max-width: 860px) { .calc-split { grid-template-columns: 1fr; gap: 32px; } }
+  @media (max-width: 860px) { .calc-split { grid-template-columns: 1fr; gap: 32px; } .calc-card { order: -1; } }
+
+  /* Live Calculator Form */
+  .calc-form { display: flex; flex-direction: column; gap: 16px; }
+  .calc-form label {
+    display: block; margin-bottom: 8px;
+    font-size: 12px; font-weight: 800; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .calc-input, .calc-select {
+    width: 100%; padding: 12px 14px;
+    font-family: inherit; font-size: 16px; font-weight: 700;
+    color: var(--text); background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 8px;
+    transition: border-color .2s;
+    -moz-appearance: textfield; appearance: textfield;
+  }
+  .calc-input::-webkit-outer-spin-button, .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .calc-input:focus, .calc-select:focus { outline: none; border-color: var(--accent); }
+  .calc-seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .calc-seg button {
+    padding: 10px 4px; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer;
+    color: var(--muted); background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 8px;
+    transition: color .2s, background .2s, border-color .2s;
+  }
+  .calc-seg button.on { color: #111; background: var(--accent); border-color: var(--accent); }
+  @media (max-width: 480px) { .calc-seg { grid-template-columns: repeat(2, 1fr); } }
+  .calc-btn { width: 100%; margin-top: 4px; }
+  .calc-error { display: none; color: #F87171; font-size: 14px; font-weight: 700; margin: 0; }
+  .calc-error.on { display: block; }
+  .calc-result { display: none; margin-top: 24px; }
+  .calc-result.on { display: block; }
+  .calc-uah { font-size: 14px; color: var(--muted); text-align: right; margin-top: 4px; }
+  .calc-cta { margin-top: 24px; text-align: center; }
+  .calc-cta .btn-solid { width: 100%; }
+
+  /* SEO block under calculator */
+  .seo-calc .seo-body h3 { font-size: 20px; font-weight: 800; margin: 32px 0 12px; }
+  .seo-calc .seo-body p { color: var(--muted); font-size: 16px; margin-bottom: 12px; max-width: 860px; }
+  .seo-calc .seo-body ul { color: var(--muted); font-size: 16px; margin: 0 0 12px 20px; max-width: 860px; }
+  .seo-calc .seo-body li { margin-bottom: 8px; }
 
   /* Gallery */
   .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
@@ -456,7 +503,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "4Drive Auto UA",
-  "image": "https://ofmalien.github.io/4drive-landing/img/og_4drive.jpg",
+  "image": "https://www.4driveauto.com/img/og_4drive.jpg",
   "telephone": "+380661999903",
   "address": {
     "@type": "PostalAddress",
@@ -464,7 +511,7 @@
     "addressLocality": "Дніпро",
     "addressCountry": "UA"
   },
-  "url": "https://ofmalien.github.io/4drive-landing/",
+  "url": "https://www.4driveauto.com/",
   "priceRange": "$$",
   "description": "Пригон авто з США під ключ у Дніпрі. Аукціон, доставка, розмитнення, комісія. Гарантія кінцевої вартості в договорі."
 }
@@ -600,6 +647,97 @@
     </div>
   </section>
 
+  <section class="wrap fade-up" id="calc">
+    <div class="sec-head" data-ghost="КАЛЬКУЛЯТОР">
+      <h2>Що саме рахує <span>калькулятор</span></h2>
+      <p class="lead">Це не «орієнтовна ціна від». Калькулятор розкладає вартість на всі статті за українськими правилами розмитнення 2026 року - та сама формула, що й у Telegram-боті.</p>
+    </div>
+    <div class="calc-split">
+      <div class="calc-left">
+        <ul class="calc-list">
+          <li>Ціна авто на аукціоні (Copart / IAAI / Manheim)</li>
+          <li>Аукціонний та брокерський збір</li>
+          <li>Доставка по США до порту</li>
+          <li>Морська доставка в Україну</li>
+          <li>Доставка по Україні</li>
+          <li>Розмитнення: мито, акциз, ПДВ, пенсійний збір</li>
+          <li>Комісія 4Drive - одна цифра, без «зірочок»</li>
+        </ul>
+      </div>
+      <div class="calc-card fade-up" style="transition-delay: 0.2s;">
+        <div class="calc-card-top">
+          <strong>Розрахуйте своє авто</strong>
+          <span id="calcRate">Курс НБУ</span>
+        </div>
+        <form class="calc-form" id="calcForm" novalidate>
+          <div>
+            <label id="calcEngineLabel">Тип двигуна</label>
+            <div class="calc-seg" id="calcEngine" role="group" aria-labelledby="calcEngineLabel">
+              <button type="button" data-engine="gasoline" class="on">⛽ Бензин</button>
+              <button type="button" data-engine="diesel">🛢 Дизель</button>
+              <button type="button" data-engine="hybrid">⚡ Гібрид</button>
+              <button type="button" data-engine="electric">🔋 Електро</button>
+            </div>
+          </div>
+          <div id="calcVolumeWrap">
+            <label for="calcVolume">Об'єм двигуна, см³</label>
+            <input class="calc-input" id="calcVolume" type="number" inputmode="numeric" min="1" placeholder="Наприклад: 2000 (це 2.0 л)">
+          </div>
+          <div id="calcKwhWrap" hidden>
+            <label for="calcKwh">Ємність батареї, кВт·год</label>
+            <input class="calc-input" id="calcKwh" type="number" inputmode="numeric" min="1" placeholder="Наприклад: 75">
+          </div>
+          <div>
+            <label for="calcYear">Рік випуску</label>
+            <select class="calc-select" id="calcYear"></select>
+          </div>
+          <div>
+            <label for="calcBid">Вартість на аукціоні, $</label>
+            <input class="calc-input" id="calcBid" type="number" inputmode="numeric" min="1" placeholder="Наприклад: 12000">
+          </div>
+          <p class="calc-error" id="calcError"></p>
+          <button type="submit" class="btn-solid calc-btn">Розрахувати</button>
+        </form>
+        <div class="calc-result" id="calcResult">
+          <div id="calcRows"></div>
+          <div class="calc-total"><span>Разом під ключ</span><b id="calcTotal"></b></div>
+          <div class="calc-uah" id="calcUah"></div>
+          <p class="calc-foot" id="calcFoot"></p>
+          <div class="calc-cta">
+            <a class="btn-solid" id="calcLead" href="https://t.me/fordriveauto_bot" target="_blank" rel="noopener">Залишити заявку</a>
+            <span class="micro">Розрахунок відкриється в боті, менеджер підбере лоти під ваш бюджет</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap fade-up seo-calc">
+    <div class="sec-head" data-ghost="РОЗМИТНЕННЯ">
+      <h2>Як розрахувати <span>розмитнення авто зі США</span></h2>
+      <p class="lead">Калькулятор вище показує не «ціну від», а повну вартість під ключ - зі ставкою аукціону, доставкою і розмитненням за українськими правилами 2026 року. Нижче пояснюємо, з чого ця сума складається, щоб ви бачили кожну статтю.</p>
+    </div>
+    <div class="seo-body">
+      <h3>З чого складається розмитнення</h3>
+      <p>При ввезенні авто зі США в Україну ви сплачуєте чотири обов'язкові платежі:</p>
+      <ul>
+        <li>Мито - 10% від митної вартості авто. Для електромобілів мито не сплачується.</li>
+        <li>Акциз - залежить від типу двигуна, об'єму і віку машини (формула нижче).</li>
+        <li>ПДВ - 20% від суми «митна вартість + мито + акциз». З 2026 року ПДВ платять і за електро.</li>
+        <li>Пенсійний збір - 3-5% від митної вартості, при постановці на облік. Електро звільнене.</li>
+      </ul>
+      <h3>Як рахується акциз</h3>
+      <p>Це стаття, яка найсильніше гуляє від машини до машини. Формула проста: базова ставка × об'єм двигуна в літрах × коефіцієнт віку. Вік рахують як «рік розмитнення мінус рік випуску мінус один», але не більше 15.</p>
+      <p>Базова ставка залежить від пального: бензин - €50 (до 3 л) або €100 (понад 3 л); дизель - €75 (до 3,5 л) або €150 (понад 3,5 л). Звичайний гібрид рахується так само, як бензин - за об'ємом двигуна. Приклад: бензиновий двигун 2,0 л, авто 2020 року, розмитнення у 2026 - коефіцієнт віку 5, акциз виходить 50 × 2 × 5 = €500.</p>
+      <p>Електро рахується інакше і зазвичай виходить дешевшим за розмитненням: замість об'єму береться ємність батареї, €1 за кожну кВт·год. Батарея на 75 кВт·год - це €75 акцизу. Мито і пенсійний для електро - нуль, але ПДВ з 2026 вже є.</p>
+      <h3>Як користуватися калькулятором</h3>
+      <p>Щоб розрахувати вартість авто з США під ключ, вкажіть чотири речі: тип двигуна, об'єм (або ємність батареї для електро), рік випуску і ціну лота на аукціоні. Натисніть «Розрахувати» - і побачите суму під ключ, розкладену по статтях. Курс НБУ підтягується на день розрахунку, тому цифри свіжі.</p>
+      <p>Розрахунок анонімний: нічого заповнювати не треба. Якщо цифра підходить - тисніть «Залишити заявку», ваш розрахунок відкриється в боті, і менеджер підбере конкретні лоти під ваш бюджет.</p>
+      <h3>Чому цифрам можна вірити</h3>
+      <p>Ми не ховаємо комісію в «зірочки» і не називаємо одну ціну, щоб потім дописати доплати. Кінцева вартість фіксується в договорі до старту - та сама, що в калькуляторі. Хочете подивитись авто вживу або порахувати кілька варіантів - приходьте в офіс у Дніпрі, вул. Костомарівська, 1А.</p>
+    </div>
+  </section>
+
   <section class="wrap fade-up">
     <div class="sec-head" data-ghost="СТРАХИ">
       <h2>Чому люди бояться пригону з США - <span>і як цього уникнути</span></h2>
@@ -655,47 +793,6 @@
           <h3>Авто у вас</h3>
           <p>Отримуєте авто з документами та постановкою на облік. Вартість - та, що була в договорі.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap fade-up">
-    <div class="sec-head" data-ghost="КАЛЬКУЛЯТОР">
-      <h2>Що саме рахує <span>калькулятор</span></h2>
-      <p class="lead">Це не «орієнтовна ціна від». Бот розкладає вартість на всі статті за українськими правилами розмитнення 2026 року.</p>
-    </div>
-    <div class="calc-split">
-      <div class="calc-left" style="display: flex; flex-direction: column; gap: 32px;">
-        <ul class="calc-list">
-        <li>Ціна авто на аукціоні (Copart / IAAI / Manheim)</li>
-        <li>Аукціонний та брокерський збір</li>
-        <li>Доставка по США до порту</li>
-        <li>Морська доставка в Україну</li>
-        <li>Доставка по Україні</li>
-        <li>Розмитнення: мито, акциз, ПДВ, пенсійний збір</li>
-        <li>Комісія 4Drive - одна цифра, без «зірочок»</li>
-      </ul>
-        <div class="calc-aside">
-        <h3>Бензин, дизель, гібрид, електро</h3>
-        <p>Акциз рахується від об'єму двигуна або ємності батареї - для кожного типу свій. Курс НБУ підтягується автоматично на день розрахунку.</p>
-        <a class="btn" href="https://t.me/fordriveauto_bot">Відкрити бота</a>
-        <span class="micro">Одразу після розрахунку можна замовити підбір - або просто зберегти цифри собі</span>
-      </div>
-      </div>
-      <div class="calc-card fade-up" style="transition-delay: 0.2s;">
-        <div class="calc-card-top">
-          <strong>Toyota Camry SE 2019</strong>
-          <span>Приклад розрахунку</span>
-        </div>
-        <div class="calc-row"><span>Ставка на аукціоні</span><b>$8 043</b></div>
-        <div class="calc-row"><span>Аукціонний та брокерський збір</span><b>$1 128</b></div>
-        <div class="calc-row"><span>Доставка США + океан</span><b>$1 900</b></div>
-        <div class="calc-row"><span>SWIFT / USDT 3.5%</span><b>$380</b></div>
-        <div class="calc-row"><span>Мито, акциз, ПДВ, пенсійний</span><b>$4 799</b></div>
-        <div class="calc-row"><span>Доставка по Україні + сертифікація</span><b>$1 050</b></div>
-        <div class="calc-row"><span>Комісія 4Drive</span><b>$500</b></div>
-        <div class="calc-total"><span>Під ключ</span><b>$17 800</b></div>
-        <p class="calc-foot">Так виглядає відповідь бота: кожна стаття окремо, підсумок - цифра, яку ви реально платите. Курс НБУ на день розрахунку, правила розмитнення 2026 року.</p>
       </div>
     </div>
   </section>
@@ -847,6 +944,259 @@
       }, { passive: true });
     }
   });
+</script>
+
+<script>
+/* ============================================================
+   ЖИВИЙ КАЛЬКУЛЯТОР - порт calculator.py ОДИН-В-ОДИН.
+   Джерело правди формули: experiments/4drive_bot/calculator.py.
+   Будь-яка зміна формули - СПОЧАТКУ в calculator.py, потім сюди.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  // Запасні курси НБУ. Використовуються, тільки якщо НБУ недоступен.
+  // СИНХРОНІЗУВАТИ з calculator.py CONFIG при оновленні курсу.
+  var RATES = { usd: 44.703, eur: 51.096, date: "", live: false };
+
+  // Константи = CONFIG calculator.py
+  var CLEARANCE_YEAR = 2026;
+  var LAND_US = 500, SEA_US_EU = 1200, STORAGE_US = 100, STORAGE_EU = 100;
+  var DELIVERY_EU_UA = 900, HAZMAT_EV = 150, CERTIFICATION = 150, COMMISSION = 500;
+  var SWIFT_RATE = 0.035, CUSTOMS_VALUE_ADDON = 1600;
+  var PENSION_T1 = 549120, PENSION_T2 = 965120;
+  var IAA_BUYER_ANCHORS = [[3000, 505], [7000, 755], [10000, 850], [15000, 900]];
+  var IAA_INTERNET_ANCHORS = [[3000, 110], [7000, 145], [10000, 160]];
+  var IAA_FIXED = 105 + 15 + 50 + 20; // Service + Environmental + Broker + Title = 190
+  var IAA_PCT_ABOVE = 0.06, IAA_PCT_THRESHOLD = 15000;
+
+  function round2(x) { return Math.round((x + Number.EPSILON) * 100) / 100; }
+
+  function interp(anchors, x) {
+    if (x <= anchors[0][0]) return anchors[0][1];
+    if (x >= anchors[anchors.length - 1][0]) return anchors[anchors.length - 1][1];
+    for (var i = 0; i < anchors.length - 1; i++) {
+      var x0 = anchors[i][0], y0 = anchors[i][1], x1 = anchors[i + 1][0], y1 = anchors[i + 1][1];
+      if (x0 <= x && x <= x1) return y0 + (y1 - y0) * (x - x0) / (x1 - x0);
+    }
+    return anchors[anchors.length - 1][1];
+  }
+
+  function iaaBuyerFee(bid) {
+    if (bid >= IAA_PCT_THRESHOLD) return round2(IAA_PCT_ABOVE * bid);
+    return round2(interp(IAA_BUYER_ANCHORS, bid));
+  }
+  function iaaInternetFee(bid) { return round2(interp(IAA_INTERNET_ANCHORS, bid)); }
+  function auctionFee(bid) { return round2(iaaBuyerFee(bid) + iaaInternetFee(bid) + IAA_FIXED); }
+
+  function exciseBaseEur(engine, volumeCc) {
+    if (engine === "diesel") return volumeCc <= 3500 ? 75 : 150;
+    // бензин і звичайний гібрид (HEV): база по об'єму, як у бензина
+    return volumeCc <= 3000 ? 50 : 100;
+  }
+
+  function ageCoef(year, clearanceYear) {
+    return Math.max(1, Math.min(15, clearanceYear - year - 1));
+  }
+
+  function customsBreakdown(customsValueUsd, engine, volumeCc, year, clearanceYear, batteryKwh) {
+    var cv = customsValueUsd * RATES.usd;
+    var duty, coef, exciseEur;
+    if (engine === "electric") {
+      duty = 0;
+      coef = 1;
+      exciseEur = 1.0 * (batteryKwh || 0); // акциз: €1 за кВт·год батареї
+    } else {
+      duty = 0.10 * cv;
+      coef = ageCoef(year, clearanceYear);
+      exciseEur = exciseBaseEur(engine, volumeCc) * (volumeCc / 1000) * coef;
+    }
+    var excise = exciseEur * RATES.eur;
+    var vat = 0.20 * (cv + duty + excise);
+    return {
+      duty: round2(duty / RATES.usd),
+      excise: round2(excise / RATES.usd),
+      exciseEur: round2(exciseEur),
+      vat: round2(vat / RATES.usd),
+      ageCoef: coef,
+      total: round2((duty + excise + vat) / RATES.usd)
+    };
+  }
+
+  function pensionFee(customsValueUsd, engine) {
+    if (engine === "electric") return 0;
+    var cv = customsValueUsd * RATES.usd;
+    var rate = cv <= PENSION_T1 ? 0.03 : (cv <= PENSION_T2 ? 0.04 : 0.05);
+    return round2(customsValueUsd * rate);
+  }
+
+  function calculate(bid, engine, volumeCc, year, batteryKwh) {
+    var fee = auctionFee(bid);
+    var sea = SEA_US_EU;
+    var customsValue = bid + fee + CUSTOMS_VALUE_ADDON;
+    var swift = round2(SWIFT_RATE * (bid + fee + LAND_US + sea));
+    var cust = customsBreakdown(customsValue, engine, volumeCc, year, CLEARANCE_YEAR, batteryKwh);
+    var pension = pensionFee(customsValue, engine);
+    var hazmat = (engine === "electric" || engine === "hybrid") ? HAZMAT_EV : 0;
+    var rows = [
+      ["Ставка (bid)", bid],
+      ["Аукц. збір", fee],
+      ["Суша США → порт", LAND_US],
+      ["Море США → Клайпеда", sea],
+      ["Стоянка США", STORAGE_US],
+      ["Стоянка ЄС", STORAGE_EU],
+      ["Небезпечний вантаж (EV)", hazmat],
+      ["SWIFT/USDT 3.5%", swift],
+      ["Комісія 4Drive", COMMISSION],
+      ["Розмитнення", cust.total],
+      ["Пенсійний фонд", pension],
+      ["Доставка ЄС → Дніпро", DELIVERY_EU_UA],
+      ["Сертифікація", CERTIFICATION]
+    ];
+    var total = 0;
+    for (var i = 0; i < rows.length; i++) total += rows[i][1];
+    total = round2(total);
+    return { rows: rows, customs: cust, customsValue: customsValue, total: total };
+  }
+
+  // ---- Курс НБУ (той самий endpoint, що в боті) ----
+  function refreshRates() {
+    if (!window.fetch) return;
+    var ctrl = window.AbortController ? new AbortController() : null;
+    if (ctrl) setTimeout(function () { ctrl.abort(); }, 6000);
+    fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json",
+          ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (data) {
+        var usd = null, eur = null;
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].cc === "USD") usd = data[i];
+          if (data[i].cc === "EUR") eur = data[i];
+        }
+        if (!usd || !eur) throw new Error("no USD/EUR");
+        var u = Number(usd.rate), e = Number(eur.rate);
+        // захист від сміття у відповіді (як RATE_SANE в calculator.py)
+        if (!(u > 10 && u < 200 && e > 10 && e < 200)) throw new Error("insane rate");
+        RATES.usd = u; RATES.eur = e;
+        RATES.date = usd.exchangedate || ""; RATES.live = true;
+        renderRateLabel();
+      })
+      .catch(function () { /* НБУ недоступен - тихо йдемо на запасному курсі */ });
+  }
+
+  // ---- UI ----
+  function $(id) { return document.getElementById(id); }
+  function fmt(n) {
+    var s = String(Math.round(n));
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
+  var engine = "gasoline";
+  var PAYLOAD_LETTER = { gasoline: "g", diesel: "d", hybrid: "h", electric: "e" };
+
+  function renderRateLabel() {
+    var el = $("calcRate");
+    if (!el) return;
+    el.textContent = RATES.live && RATES.date ? "Курс НБУ " + RATES.date : "Курс НБУ";
+  }
+
+  function showError(msg) {
+    var el = $("calcError");
+    el.textContent = msg;
+    el.classList.add("on");
+  }
+  function clearError() { $("calcError").classList.remove("on"); }
+
+  function onSubmit(ev) {
+    ev.preventDefault();
+    clearError();
+
+    var bid = Math.round(Number($("calcBid").value));
+    var year = parseInt($("calcYear").value, 10);
+    var volumeCc = 0, batteryKwh = 0;
+
+    if (!isFinite(bid) || bid <= 0) { showError("Вкажіть вартість авто на аукціоні у доларах, напр. 12000."); return; }
+    if (engine === "electric") {
+      batteryKwh = Math.round(Number($("calcKwh").value));
+      if (!isFinite(batteryKwh) || batteryKwh <= 0) { showError("Вкажіть ємність батареї у кВт·год, напр. 75."); return; }
+    } else {
+      volumeCc = Math.round(Number($("calcVolume").value));
+      if (!isFinite(volumeCc) || volumeCc < 100) { showError("Вкажіть об'єм двигуна у см³, напр. 2000 (це 2.0 л)."); return; }
+    }
+
+    var r = calculate(bid, engine, volumeCc, year, batteryKwh);
+
+    var rowsHtml = "";
+    for (var i = 0; i < r.rows.length; i++) {
+      var name = r.rows[i][0], val = r.rows[i][1];
+      if (name === "Небезпечний вантаж (EV)" && !val) continue; // як у боті: ховаємо нульовий рядок
+      rowsHtml += '<div class="calc-row"><span>' + name + '</span><b>$' + fmt(val) + '</b></div>';
+    }
+    $("calcRows").innerHTML = rowsHtml;
+    $("calcTotal").textContent = "~$" + fmt(r.total);
+    $("calcUah").textContent = "≈ " + fmt(r.total * RATES.usd) + " грн";
+    $("calcFoot").textContent =
+      "Розраховано за курсом НБУ" + (RATES.live && RATES.date ? " на " + RATES.date : "") +
+      ": $1 = " + RATES.usd.toFixed(2) + " грн. " +
+      "Розрахунок орієнтовний: точну суму під конкретний лот підтвердить менеджер.";
+
+    // Deep link у бота: payload = входи калькулятора (спільний формат сайт/бот)
+    var payload = PAYLOAD_LETTER[engine] + "-" + volumeCc + "-" + year + "-" + bid + "-" + batteryKwh;
+    $("calcLead").href = "https://t.me/fordriveauto_bot?start=" + payload;
+
+    var res = $("calcResult");
+    res.classList.add("on");
+    if (res.scrollIntoView) res.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function init() {
+    var form = $("calcForm");
+    if (!form) return;
+
+    // Рік випуску: 2026...2010
+    var sel = $("calcYear");
+    for (var y = 2026; y >= 2010; y--) {
+      var opt = document.createElement("option");
+      opt.value = String(y);
+      opt.textContent = String(y);
+      if (y === 2019) opt.selected = true;
+      sel.appendChild(opt);
+    }
+
+    // Перемикач типу двигуна
+    var seg = $("calcEngine");
+    seg.addEventListener("click", function (ev) {
+      var btn = ev.target.closest ? ev.target.closest("button[data-engine]") : null;
+      if (!btn) return;
+      engine = btn.getAttribute("data-engine");
+      var btns = seg.querySelectorAll("button");
+      for (var i = 0; i < btns.length; i++) btns[i].classList.remove("on");
+      btn.classList.add("on");
+      $("calcVolumeWrap").hidden = engine === "electric";
+      $("calcKwhWrap").hidden = engine !== "electric";
+      clearError();
+    });
+
+    form.addEventListener("submit", onSubmit);
+    renderRateLabel();
+    refreshRates();
+  }
+
+  // для консольної звірки цифр сайт<->бот
+  window.__calc4drive = {
+    calculate: calculate,
+    auctionFee: auctionFee,
+    customsBreakdown: customsBreakdown,
+    pensionFee: pensionFee,
+    RATES: RATES
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
 </script>
 
 </body>
