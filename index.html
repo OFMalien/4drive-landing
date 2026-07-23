@@ -7,7 +7,7 @@
 <title>4Drive Auto UA - Авто з США під ключ | Дніпро</title>
 <meta name="description" content="Пригон авто з США під ключ у Дніпрі. Розрахуйте повну вартість за 2 хвилини в Telegram-боті: аукціон, доставка, розмитнення, комісія. Гарантія кінцевої вартості в договорі.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#121214">
+<meta name="theme-color" content="#0A0A0B">
 <link rel="canonical" href="https://ofmalien.github.io/4drive-landing/">
 
 <!-- OpenGraph / Social -->
@@ -31,15 +31,15 @@
 
 <style>
   :root {
-    --bg: #121214;
-    --bg-2: #0C0C0E;
-    --surface: #1E1E22;
-    --surface-2: #2A2A2F;
-    --accent: #FFA300;
-    --accent-2: #FFC400;
+    --bg: #0A0A0B;
+    --bg-2: #050505;
+    --surface: #131315;
+    --surface-2: #1B1B1E;
+    --accent: #FFD500;
+    --accent-2: #FFE14D;
     --text: #FFFFFF;
     --muted: #9CA3AF; /* Улучшен контраст для WCAG (4.5:1+) */
-    --line: #303036;
+    --line: #222226;
     --radius: 16px;
     --nav-height: 72px;
   }
@@ -114,13 +114,13 @@
     transition: transform .2s ease, box-shadow .2s ease;
     cursor: pointer;
   }
-  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,163,0,.3); }
+  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,213,0,.3); }
   .micro { display: block; margin-top: 16px; font-size: 14px; color: var(--muted); }
 
   /* Header (Redesigned) */
   header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 90;
-    background: rgba(12,12,14,.9);
+    background: rgba(5,5,5,.9);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,.06);
     height: var(--nav-height); display: flex; align-items: center;
@@ -170,7 +170,7 @@
   }
   .head-outline::before { left: -4px; bottom: -4px; }
   .head-outline::after { right: -4px; top: -4px; }
-  .head-outline:hover { background: rgba(255,163,0,.1); }
+  .head-outline:hover { background: rgba(255,213,0,.1); }
   .head-outline:hover::before, .head-outline:hover::after { width: 50%; }
 
   @media (max-width: 1024px) {
@@ -188,7 +188,7 @@
   .hero {
     position: relative; padding: calc(var(--nav-height) + 80px) 0 96px;
     background:
-      linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)),
+      linear-gradient(rgba(5, 5, 5, 0.65), rgba(5, 5, 5, 0.65)),
       url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2);
     overflow: hidden;
   }
@@ -210,7 +210,7 @@
   .hero-logo { width: 280px; max-width: 70vw; margin-bottom: 24px; }
   .badge {
     display: inline-flex; align-items: center; gap: 8px;
-    border: 1px solid rgba(255,163,0,.3); background: rgba(255,163,0,.1);
+    border: 1px solid rgba(255,213,0,.3); background: rgba(255,213,0,.1);
     color: var(--accent); padding: 6px 16px; font-size: 13px; font-weight: 800;
     letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; border-radius: 4px;
   }
@@ -222,7 +222,7 @@
 
   /* Calc Card */
   .calc-card {
-    background: linear-gradient(165deg, var(--surface) 0%, #17171A 100%);
+    background: linear-gradient(165deg, var(--surface) 0%, #0E0E10 100%);
     border: 1px solid var(--line); border-radius: var(--radius);
     padding: 32px; box-shadow: 0 32px 64px rgba(0,0,0,.6);
   }
@@ -247,7 +247,7 @@
   .calc-foot { margin-top: 16px; font-size: 13px; color: var(--muted); line-height: 1.5; }
   
   @media (max-width: 900px) {
-    .hero { padding: 120px 0 64px; background: linear-gradient(rgba(12, 12, 14, 0.65), rgba(12, 12, 14, 0.65)), url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2); }
+    .hero { padding: 120px 0 64px; background: linear-gradient(rgba(5, 5, 5, 0.65), rgba(5, 5, 5, 0.65)), url("img/hero_new.jpg") center / cover no-repeat, var(--bg-2); }
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero-logo { margin: 0 auto 24px; }
     .hero-grid > div:first-child { text-align: center; }
@@ -257,7 +257,7 @@
   /* Marquee */
   .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 24px 0; }
   .strip-in { display: flex; align-items: center; gap: 64px; width: max-content; animation: slide 30s linear infinite; }
-  .strip-in span { font-size: 20px; font-weight: 900; letter-spacing: 2px; color: #4A4A50; text-transform: uppercase; }
+  .strip-in span { font-size: 20px; font-weight: 900; letter-spacing: 2px; color: #3A3A40; text-transform: uppercase; }
   .strip-in span.on { color: var(--accent); }
   @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .strip-in { animation: none; } }
@@ -277,7 +277,7 @@
   .card .ico { 
     display: inline-flex; align-items: center; justify-content: center;
     width: 64px; height: 64px; border-radius: 50%;
-    background: rgba(255,163,0,.1); color: var(--accent);
+    background: rgba(255,213,0,.1); color: var(--accent);
     margin-bottom: 24px;
   }
   .card .ico svg { width: 32px; height: 32px; fill: currentColor; }
@@ -379,13 +379,13 @@
   }
   .contact-redesign::before {
     content: ""; position: absolute; inset: 0;
-    background: rgba(12, 12, 14, 0.92); /* Dark overlay */
+    background: rgba(5, 5, 5, 0.92); /* Dark overlay */
     backdrop-filter: blur(4px);
   }
   .contact-wrapper { position: relative; z-index: 2; }
   .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
   .contact-box {
-    background: rgba(30, 30, 34, 0.7); border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(19, 19, 21, 0.7); border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(8px);
     border-radius: var(--radius); padding: 32px 24px;
     transition: transform .3s ease, border-color .3s ease;
@@ -414,14 +414,14 @@
     width: 58px; height: 58px; border-radius: 50%;
     background: var(--accent); color: #111;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 10px 30px rgba(255,163,0,.32);
+    box-shadow: 0 10px 30px rgba(255,213,0,.32);
     animation: pulse 2.6s ease-out infinite;
   }
   .float-tg svg { width: 26px; height: 26px; fill: currentColor; }
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,163,0,.42); }
-    70% { box-shadow: 0 0 0 18px rgba(255,163,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,163,0,0); }
+    0% { box-shadow: 0 0 0 0 rgba(255,213,0,.42); }
+    70% { box-shadow: 0 0 0 18px rgba(255,213,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,213,0,0); }
   }
   @media (prefers-reduced-motion: reduce) { .float-tg { animation: none; } }
   .to-top {
